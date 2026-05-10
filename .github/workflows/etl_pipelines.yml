@@ -1,21 +1,23 @@
 name: Weather ETL Pipeline
 
 on:
-  push:
-    branches: [main]
   schedule:
-    - cron: "0 6 * * *"   # Daily at 06:00 UTC — free, no ADF needed
-  workflow_dispatch:        # Also allows manual "Run" button in GitHub UI
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write        # ← ADD THIS — allows the bot to push commits
 
 jobs:
   run-pipeline:
-    runs-on: ubuntu-latest  # Free GitHub-hosted runner
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0   # ← ADD THIS — fetches full history to avoid push conflicts
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -24,9 +26,6 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-
-      - name: Debug workspace
-        run: pwd && ls -la
 
       - name: Run ETL pipeline
         env:
