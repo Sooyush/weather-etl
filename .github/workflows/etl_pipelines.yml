@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Debug workspace
+        run: pwd && ls -la
+
       - name: Run ETL pipeline
         env:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
