@@ -1,0 +1,45 @@
+{
+  "coord": {
+    "lon": 139.6917,
+    "lat": 35.6895
+  },
+  "weather": [
+    {
+      "id": 801,
+      "main": "Clouds",
+      "description": "few clouds",
+      "icon": "02n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 23.83,
+    "feels_like": 23.84,
+    "temp_min": 22.59,
+    "temp_max": 24.81,
+    "pressure": 1018,
+    "humidity": 60,
+    "sea_level": 1018,
+    "grnd_level": 1016
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 8.75,
+    "deg": 190
+  },
+  "clouds": {
+    "all": 20
+  },
+  "dt": 1779097979,
+  "sys": {
+    "type": 2,
+    "id": 268395,
+    "country": "JP",
+    "sunrise": 1779046470,
+    "sunset": 1779097261
+  },
+  "timezone": 32400,
+  "id": 1850144,
+  "name": "Tokyo",
+  "cod": 200
+}
